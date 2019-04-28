@@ -27,3 +27,28 @@
 | 虚拟机 → 其他主机 | √   | √    | ×              | 默认不需设置 |
 | 其他主机 → 虚拟机 | ×   | √    | ×              | 默认不需设置 |
 | 虚拟机之间        | ×   | √    | 同网络名下可以 | √            |
+
+## 虚拟机的配置
+
+### 窗口自适应
+
+1. Click `Devices`
+2. Click `Insert guest Additions CD Image`
+
+### 虚拟机和主机之间的复制粘贴
+
+1. Click `Devices`
+2. Click `Shared Clipboard`
+3. Choose `Bidirectional`
+
+### 虚拟机和主机之间的文件拖拽
+
+1. Click `Devices`
+2. Click `Drag and Drop`
+3. Choose `Bidirectional`
+
+### 虚拟机和主机之间的文件(夹)共享
+
+1. Click `Devices`
+2. Click `Shared Folders`
+3. 根据提示选择共享文件(夹)
