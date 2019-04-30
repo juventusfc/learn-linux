@@ -92,3 +92,13 @@ Linux 不像 Windows 一样有 C 盘/D 盘等，Linux 有且只有一个根目�
 2. 访问的机器安装
    1. XShell(收费)或者 PuTTY(免费)：远程登录软件。在 Linux 中使用`ifconfig`指令查找 Linux 的网络地址，然后使用 XShell 连接至这个 Linux 的网络地址。
    2. XFtp：远程上传和下载软件
+
+## VI 和 VIM
+
+VI 是编辑器，VIM 是 VI 的增强版。
+
+![vi-key](./images/vi-key.gif)
+
+VI 有三种模式：
+
+![vi](./images/vi.png)
