@@ -140,7 +140,7 @@ Linux 用户创建时，会在 /home/ 目录下生成对应用户的家目录。
 
 `userdel 用户名`: 删除用户
 
-```bash
+```shell
 //删除xm，同时删除家目录
 userdel -r xm
 
@@ -157,10 +157,65 @@ userdel xm
 
 例子：
 
-```bash
+```shell
 //创建用户zf，并且切换到zf
 useradd zf
 passwd zf
 
 su - zf
+```
+
+### 用户组
+
+用户组类似于角色，系统可以对有共性的多个用户进行管理。
+
+- `groupadd 组名`: 增加组
+- `groupdel 组名`: 删除组
+- `usermod -g 组名 用户名`: 修改用户组
+
+```shell
+// 创建用户 zwj 并指定 wudang 组
+groupadd wudang
+useradd -g wudang zwj
+
+// 将 zwj 修改到 shaolin 组
+groupadd shaolin
+usermod -g shaolin zwj
+```
+
+### 用户和组的配置文件
+
+- `/etc/passwd`文件  
+  用户配置文件，记录用户的各种信息。
+- `/etc/shadow`文件  
+   口令配置文件。
+- `/etc/group`文件  
+   组配置文件，记录组的信息。
+
+## 实用指令
+
+### 指定运行级别
+
+运行级别的设置是为了在不同场景下使用 Linux 系统。运行级别分为：
+
+- 运行级别 0: 关机
+- 运行级别 1: 单用户(找回丢失密码)
+- 运行级别 2: 多用户无网络服务
+- 运行级别 3: 多用户有网络服务
+- 运行级别 4: 保留
+- 运行级别 5: 图形界面
+- 运行级别 6: 重启
+
+运行级别可在 `/etc/inittab` 文件中设置，也可以使用 `init 运行级别` 指令切换到指定运行级别。
+
+```shell
+// 目的: 找回 root 密码
+
+// 1. 开启电脑
+// 2. 疯狂按 Enter 键，出现新界面
+// 3. 按 e 键，进入另一个新界面，选择 kernel
+// 4. 按 e 键，进入另一个新界面，输入“空格 1”，之后再次按 Enter 键，回到第三步的界面
+// 5. 按 b 键，进入运行级别1
+// 6. 修改密码
+passwd root
 ```
